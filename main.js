@@ -2,6 +2,17 @@ document.addEventListener("DOMContentLoader", () => {
 });
 
 const squares = document.getElementsByTagName("td");
+let turn = true;
+
+// const playerOne = new Player("X");
+// const playerTwo = new Player("O");
+
+// if (turn === true) {
+//   squares.playerOne.addPlayerOne();
+// }
+// else if (turn === false) {
+//   squares.playerTwo.addPlayerTwo();
+// }
 
 const winCondition = [
   [0, 1, 2],
@@ -14,10 +25,21 @@ const winCondition = [
   [2, 4, 6],
 ];
 
+const addPlayerOne = (i) => {
+  squares[i].innerText = "X";
+  squares[i].classList = "X";
+}
+
+const addPlayerTwo = (i) => {
+  squares[i].innerText = "O";
+  squares[i].classList = "O";
+}
+
 for (let i = 0; i < squares.length; i++) {
   squares[i].getAttribute("data-num");
   squares[i].addEventListener("click", () => {
-    // clicked = true;
-    console.log("cone" + i);
+    console.log("Test Click" + i);
+    addPlayerOne(i);
+    addPlayerTwo(i);
   });
 };
